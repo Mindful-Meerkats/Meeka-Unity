@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA2CB0C0-D978-0AA2-6CDF-CD2E3A502D8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>5.3.5f1</UnityVersion>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_5;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_5;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Resources\Scripts\MainBehaviour.cs" />
+    <Compile Include="Assets\Resources\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\QuestHolder.cs" />
+    <Compile Include="Assets\Resources\Scripts\QuestReader.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Accordion\Accordion.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Accordion\AccordionElement.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Accordion\Tweening\FloatTween.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Accordion\Tweening\ITweenValue.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Accordion\Tweening\TweenRunner.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ComboBox\AutoCompleteComboBox.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ComboBox\ComboBox.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ComboBox\DropDownList.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ComboBox\DropDownListButton.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ComboBox\DropDownListItem.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\BestFitOutline.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\CurvedText.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\CylinderText.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\Gradient.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\ImageExtended.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\LetterSpacing.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\NicerOutline.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\RaycastMask.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\Shaders\UIAdditiveEffect.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\Shaders\UIImageCrop.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\Shaders\UILinearDodgeEffect.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\Shaders\UIMultiplyEffect.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\Shaders\UIScreenEffect.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\Shaders\UISoftAdditiveEffect.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\ShineEffect.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\ShineEffector.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\SoftMaskScript.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\UIFlippable.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\UIParticleSystem.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\HSVPicker\ColorPickerTester.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\HSVPicker\HSVPicker.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\HSVPicker\HSVSliderEvent.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\HSVPicker\HSVUtil.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\HSVPicker\HexRGB.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\HSVPicker\HsvBoxSelector.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\HSVPicker\HsvSliderPicker.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\InputModules\AimerInputModule.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\InputModules\GamePadInputModule.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\CurvedLayout.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\FlowLayoutGroup.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\HorizontalScrollSnap.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\RadialLayout.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\ScrollSnap.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\TileSizeFitter.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\UIVerticalScroller.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\UIVerticalScrollerDemo\Scripts\ScrollingCalendar.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Layout\VerticalScrollSnap.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Primitives\DiamondGraph.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Primitives\UICircle.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Primitives\UICornerCut.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Primitives\UILineRenderer.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Primitives\UILineTextureRenderer.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Primitives\UIMesh.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Primitives\UIPolygon.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Primitives\UIPrimitiveBase.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ReorderableList\ReorderableList.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ReorderableList\ReorderableListContent.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ReorderableList\ReorderableListDebug.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ReorderableList\ReorderableListElement.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\RescalingPanels\RescaleDragPanel.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\RescalingPanels\RescalePanel.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\RescalingPanels\ResizePanel.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\SelectionBox\ExampleSelectable.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\SelectionBox\IBoxSelectable.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\SelectionBox\SelectionBox.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\TabNavigation.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ToolTips\BoundTooltip\BoundTooltipItem.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ToolTips\BoundTooltip\BoundTooltipTrigger.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ToolTips\HoverTooltip.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\ToolTips\ToolTip.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\UIWindowBase.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\BezierPath.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\CLZF2.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\DragCorrector.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\ExtensionsToggle.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\ExtensionsToggleGroup.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\InputFieldEnterSubmit.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\InputFocus.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\PPIViewer.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\ReturnKeyTriggersButton.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\ScrollConflictManager.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\ScrollRectEx.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\ScrollRectExtensions.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\ScrollRectLinker.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\ScrollRectTweener.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Attributes\DontSaveField.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\ExampleScriptsAndClasses\TestClass.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\ExampleScriptsAndClasses\TestScript.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Non-Mono Classes\ObjectComponent.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Non-Mono Classes\SceneData.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Non-Mono Classes\SceneObject.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\ObjectIdentifier.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\SaveLoad.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\SaveLoadMenu.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\ColorSurrogate.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\GameObjectSurrogate.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\QuaternionSurrogate.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\Texture2DSurrogate.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\TransformSurrogate.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\Vector2Surrogate.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\Vector3Surrogate.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\Vector4Surrogate.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Utilities\TypeSystem.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\SetPropertyUtility.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\TestCompression.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\UIScrollToSelection.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\UIScrollToSelectionXY.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\UISelectableExtension.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\Utilities\switchToRectTransform.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\VR Extensions\VRCursor.cs" />
+    <Compile Include="Assets\unity-ui-extensions\Scripts\VR Extensions\VRInputModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\StreamingAssets\QuestTest.xml" />
+    <None Include="Assets\unity-ui-extensions\Scripts\Utilities\Serialization\Surrogates\SurrogatesReadMe.txt" />
+    <None Include="Assets\unity-ui-extensions\Shaders\SoftMaskShader.shader" />
+    <None Include="Assets\unity-ui-extensions\Shaders\SoftMaskShaderText.shader" />
+    <None Include="Assets\unity-ui-extensions\Shaders\UIAdditive.shader" />
+    <None Include="Assets\unity-ui-extensions\Shaders\UIImageCrop.shader" />
+    <None Include="Assets\unity-ui-extensions\Shaders\UILinearDodge.shader" />
+    <None Include="Assets\unity-ui-extensions\Shaders\UIMultiply.shader" />
+    <None Include="Assets\unity-ui-extensions\Shaders\UIParticleHidden.shader" />
+    <None Include="Assets\unity-ui-extensions\Shaders\UIScreen.shader" />
+    <None Include="Assets\unity-ui-extensions\Shaders\UISoftAdditive.shader" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
+</Project>

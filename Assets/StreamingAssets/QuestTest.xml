@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<QuestDirectory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Quest>
+		<QuestID>1</QuestID>
+		<questTitle>Saddle up!</questTitle>
+		<questDesc>"Do not drive a car today."</questDesc>
+		<questFinish>"Isn't it refreshing to not have to face congestion? And you can also focus on podcasts in public transport or the saddle."</questFinish>
+		<thriftinessPoints>1</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>0</happinessPoints>
+		<healthPoints>0</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>0</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+	<Quest>
+		<QuestID>2</QuestID>
+		<questTitle>Distrawed!</questTitle>
+		<questDesc>"Have you ever wondered why they are always forcing you to use a straw? But who would give it back? Maybe you? Try not to use a straw today."</questDesc>
+		<questFinish>"Yeah, I know it was weird to specifically ask not to get a straw, but hey, you look way more confident without it. Believe me."</questFinish>
+		<thriftinessPoints>2</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>0</happinessPoints>
+		<healthPoints>0</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>0</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+	<Quest>
+		<QuestID>3</QuestID>
+		<questTitle>Push-up or Push-back?</questTitle>
+		<questDesc>"We probably all have been in childish push-up contests to impress friends. This is your chance to train. Let's start with 5. Or 50."</questDesc>
+		<questFinish>"That's nothing.", you say? Fine! I don't care. Pah... You'll see next time. You just wait.</questFinish>
+		<thriftinessPoints>3</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>0</happinessPoints>
+		<healthPoints>0</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>0</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+	<Quest>
+		<QuestID>4</QuestID>
+		<questTitle>Smile away. Smile a way.</questTitle>
+		<questDesc>"A smile is a small gesture and costs nothing. But can mean the world to a person smiled at. Try to smile to minimum 5 strangers today!"</questDesc>
+		<questFinish>"That was great! What a beautiful smile. Your dentist would be proud of you/himself. No, we never wanted you to feel like the Joker."</questFinish>
+		<thriftinessPoints>4</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>0</happinessPoints>
+		<healthPoints>0</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>0</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+	<Quest>
+		<QuestID>5</QuestID>
+		<questTitle>Listen up!</questTitle>
+		<questDesc>"Did you know how vast human knowledge is? Just check for a podcast of your favourite topic today!"</questDesc>
+		<questFinish>"Was that not exciting?! Have you not learned a great lot already? Keep it up!"</questFinish>
+		<thriftinessPoints>0</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>0</happinessPoints>
+		<healthPoints>0</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>2</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+	<Quest>
+		<QuestID>6</QuestID>
+		<questTitle>Freegan frenzy.</questTitle>
+		<questDesc>"This one's a toughy. Try to prepare a meal from recovered food. Yep, that means dumpsterdiving. Prepare your snorkel and gloves!"</questDesc>
+		<questFinish>"Wow. I call that devotion. I am impressed. If you have managed this hurdle, maybe you want to check \"Taste the Waste\" or \"Just eat it\"."</questFinish>
+		<thriftinessPoints>0</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>3</happinessPoints>
+		<healthPoints>0</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>0</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+	<Quest>
+		<QuestID>7</QuestID>
+		<questTitle>The Grateful.</questTitle>
+		<questDesc>"When was the last time you thought about what you are grateful for. Take 5 today to sit down and wonder."</questDesc>
+		<questFinish>"Thanks. #OhTheIrony"</questFinish>
+		<thriftinessPoints>0</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>0</happinessPoints>
+		<healthPoints>2</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>0</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+	<Quest>
+		<QuestID>8</QuestID>
+		<questTitle>Sleeping Beauty.</questTitle>
+		<questDesc>"Are you not often annoyed how long you take to get up? Try not to snooze tomorrow morning!"</questDesc>
+		<questFinish>"Yeah! It's gonna be a great day!"</questFinish>
+		<thriftinessPoints>0</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>0</happinessPoints>
+		<healthPoints>0</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>0</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+	<Quest>
+		<QuestID>9</QuestID>
+		<questTitle>Banky Pig.</questTitle>
+		<questDesc>"Try to not spend more than 10 Units of your currency today.  "</questDesc>
+		<questFinish>"Remember. This is not about being greedy or stingy. Thrifty and generous are no contradictions."</questFinish>
+		<thriftinessPoints>0</thriftinessPoints>
+		<fitnessPoints>0</fitnessPoints>
+		<happinessPoints>0</happinessPoints>
+		<healthPoints>0</healthPoints>
+		<reputationPoints>0</reputationPoints>
+		<wisdomPoints>0</wisdomPoints>
+    <pawprintPoints>0</pawprintPoints>
+	</Quest>
+</QuestDirectory>
