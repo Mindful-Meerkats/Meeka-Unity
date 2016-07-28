@@ -8,6 +8,7 @@ public enum MenuState
     Choice,
     NewQuest,
     CurrentQuest,
+    Hold,
     Popup,
 }
 
@@ -19,7 +20,9 @@ public class MenuScript : MonoBehaviour
     public MenuState state;
     public GameObject questChoiceHolder;
     public GameObject questCurrentHolder;
+    public GameObject questsOnHoldHolder;
     public GameObject currentQuestGrid;
+    public GameObject holdQuestGrid;
 
     public GameObject choiceMenu;
     public GameObject popUp;
@@ -28,12 +31,15 @@ public class MenuScript : MonoBehaviour
 
     public string localPopupTitle;
     public string localPopupText;
-    public QuestReader questReader;
+    public QUEST.QuestReader questReader;
 
-    private bool questChoiceHolderActive = false;
-    private bool questCurrentHolderActive = false;
-    private bool choiceMenuActive = false;
-    private bool popupActive = false;
+    private bool questChoiceHolderActive    = false;
+    private bool questCurrentHolderActive   = false;
+    private bool choiceMenuActive           = false;
+    private bool holdActive                 = false;
+    private bool popupActive                = false;
+
+    public int holdSlots = 3;
 
 
     public void Update()
@@ -44,7 +50,8 @@ public class MenuScript : MonoBehaviour
                 choiceMenuActive            = false;
                 questCurrentHolderActive    = false;
                 questChoiceHolderActive     = false;
-                popupActive = false;
+                popupActive                 = false;
+                holdActive                  = false;
                 thisButton.onClick.AddListener( ( ) => OpenChoiceMenu( ));
                 updateAllMenus( );
                 break;
@@ -54,6 +61,7 @@ public class MenuScript : MonoBehaviour
                 questCurrentHolderActive = false;
                 questChoiceHolderActive = false;
                 popupActive = false;
+                holdActive = false;
                 thisButton.onClick.AddListener( ( ) => NoMenu( ) );
                 updateAllMenus( );
                 break;
@@ -63,6 +71,7 @@ public class MenuScript : MonoBehaviour
                 questCurrentHolderActive = false;
                 questChoiceHolderActive = true;
                 popupActive = false;
+                holdActive                 = false;
                 thisButton.onClick.AddListener( ( ) => NoMenu( ) );
                 updateAllMenus( );
                 break;
@@ -72,6 +81,16 @@ public class MenuScript : MonoBehaviour
                 questCurrentHolderActive = true;
                 questChoiceHolderActive = false;
                 popupActive = false;
+                holdActive = false;
+                thisButton.onClick.AddListener( ( ) => NoMenu( ) );
+                updateAllMenus( );
+                break;
+            case MenuState.Hold:
+                choiceMenuActive = false;
+                questCurrentHolderActive = false;
+                questChoiceHolderActive = false;
+                popupActive = false;
+                holdActive = true;
                 thisButton.onClick.AddListener( ( ) => NoMenu( ) );
                 updateAllMenus( );
                 break;
@@ -80,6 +99,7 @@ public class MenuScript : MonoBehaviour
                 questCurrentHolderActive = false;
                 questChoiceHolderActive = false;
                 popupActive = true;
+                holdActive = false;
                 thisButton.onClick.AddListener( ( ) => NoMenu( ) );
                 updateAllMenus( );
                 popupTitle.text = localPopupTitle;
@@ -103,7 +123,7 @@ public class MenuScript : MonoBehaviour
         state = MenuState.Popup;
     }
 
-	public void OpenChoiceMenu()
+    public void OpenChoiceMenu()
     {
         audio.Play( );
         state = MenuState.Choice;
@@ -113,6 +133,11 @@ public class MenuScript : MonoBehaviour
     {
         audio.Play( );
         state = MenuState.CurrentQuest; 
+    }
+    public void OpenQuestsOnHold()
+    {
+        audio.Play( );
+        state = MenuState.Hold; 
     }
 
     public void OpenQuestChoice()
@@ -128,5 +153,11 @@ public class MenuScript : MonoBehaviour
         questCurrentHolder.SetActive( questCurrentHolderActive );
         questChoiceHolder.SetActive( questChoiceHolderActive );
         popUp.SetActive( popupActive );
+        questsOnHoldHolder.SetActive( holdActive );
+    }
+
+    public void printMessage()
+    {
+        Debug.Log("test test");
     }
 }

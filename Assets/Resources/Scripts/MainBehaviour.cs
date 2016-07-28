@@ -144,28 +144,51 @@ public class MainBehaviour : MonoBehaviour
         reputationScore += rep;
         wisdomScore += wis;
         pawprintScore += paw;
-        Debug.Log("Score added, current score: " + thriftinessScore + " " + fitnessScore + " " + happinessScore + " " + healthScore + " " + reputationScore + " " + wisdomScore + " " + pawprintScore  );
+        
+        updateScoreValues( );
+
+
+        thriftCircle.fillPercent = thriftinessScore * 10;
+        thriftCircle.SetAllDirty( );
+        fitnessCircle.fillPercent = fitnessScore * 10;
+        fitnessCircle.SetAllDirty( );
+        happinessCircle.fillPercent = happinessScore * 10;
+        happinessCircle.SetAllDirty( );
+        healthCircle.fillPercent = healthScore * 10;
+        healthCircle.SetAllDirty( );
+        reputationCircle.fillPercent = reputationScore * 10;
+        reputationCircle.SetAllDirty( );
+        wisdomCircle.fillPercent = wisdomScore * 10;
+        wisdomCircle.SetAllDirty( );
+        Canvas.ForceUpdateCanvases( );
+    }
+
+    public void increaseScore()
+    {
+        updateScoreValues( );
+        thriftCircle.fillPercent = thriftinessScore;
+        thriftCircle.SetAllDirty();
+        fitnessCircle.fillPercent = fitnessScore;
+        fitnessCircle.SetAllDirty( );
+        happinessCircle.fillPercent = happinessScore;
+        happinessCircle.SetAllDirty( );
+        healthCircle.fillPercent = healthScore;
+        healthCircle.SetAllDirty( );
+        reputationCircle.fillPercent = reputationScore;
+        reputationCircle.SetAllDirty( );
+        wisdomCircle.fillPercent = wisdomScore;
+        wisdomCircle.SetAllDirty( );
+
+        Canvas.ForceUpdateCanvases( );
     }
 
     public void Update()
     {
+        
+
         if(Input.GetKeyDown(KeyCode.I))
         {
-            thriftinessScore++;
-            fitnessScore++;
-            happinessScore++;
-            healthScore++;
-            reputationScore++;
-            wisdomScore++;
-            pawprintScore++;
-            thriftCircle.fillPercent = thriftinessScore; 
-            fitnessCircle.fillPercent = fitnessScore;
-            happinessCircle.fillPercent = happinessScore;
-            healthCircle.fillPercent = healthScore;
-            reputationCircle.fillPercent = reputationScore;
-            wisdomCircle.fillPercent = wisdomScore;
-            updateScoreValues();
-            Canvas.ForceUpdateCanvases();
+            
         }
         if(Input.GetKeyDown(KeyCode.U))
         {
@@ -177,7 +200,7 @@ public class MainBehaviour : MonoBehaviour
             wisdomScore--;
             pawprintScore--;
             updateScoreValues();
-            Canvas.ForceUpdateCanvases();
+            
         }
 
 
@@ -364,27 +387,27 @@ public class MainBehaviour : MonoBehaviour
         if (wisdomPlusCounter == 0)
         {
             meekaWisdom.sprite = wisdomPlus1;
-            Debug.Log("1");
+            //Debug.Log("1");
         }
         if (wisdomPlusCounter == 1)
         {
             meekaWisdom.sprite = wisdomPlus2;
-            Debug.Log( "2" );
+            //Debug.Log( "2" );
         }
         if (wisdomPlusCounter == 2)
         {
             meekaWisdom.sprite = wisdomPlus3;
-            Debug.Log( "3" );
+            //Debug.Log( "3" );
         }
         if (wisdomPlusCounter == 3)
         {
             meekaWisdom.sprite = wisdomPlus4;
-            Debug.Log( "4" );
+            //Debug.Log( "4" );
         }
         if (wisdomPlusCounter == 4)
         {
             meekaWisdom.sprite = wisdomPlus5;
-            Debug.Log( "5" );
+            //Debug.Log( "5" );
             wisdomPlusCounter = 0; 
         }
         wisdomPlusCounter++;
@@ -394,17 +417,17 @@ public class MainBehaviour : MonoBehaviour
         if (wisdomMinusCounter == 1)
         {
             meekaWisdom.sprite = wisdomMinus1;
-            Debug.Log("1");
+            //Debug.Log("1");
         }
         if (wisdomMinusCounter == 2)
         {
             meekaWisdom.sprite = wisdomMinus2;
-            Debug.Log( "2" );
+            //Debug.Log( "2" );
         }
         if (wisdomMinusCounter == 3)
         {
             meekaWisdom.sprite = wisdomMinus3;
-            Debug.Log( "3" );
+            //Debug.Log( "3" );
             wisdomMinusCounter = 0;
         }
         wisdomMinusCounter++;
@@ -414,22 +437,22 @@ public class MainBehaviour : MonoBehaviour
         if (healthMinusCounter == 1)
         {
             meekaHealth.sprite = healthMinus;
-            Debug.Log("1");
+            //Debug.Log("1");
         }
         if (healthMinusCounter == 2)
         {
             meekaHealth.sprite = healthMinus1;
-            Debug.Log( "2" );
+            //Debug.Log( "2" );
         }
         if (healthMinusCounter == 3)
         {
             meekaHealth.sprite = healthMinus2;
-            Debug.Log( "3" );
+            //Debug.Log( "3" );
         }
         if (healthMinusCounter == 4)
         {
             meekaHealth.sprite = healthMinus3;
-            Debug.Log( "4" );
+            //Debug.Log( "4" );
             healthMinusCounter = 0;
         }
         healthMinusCounter++;

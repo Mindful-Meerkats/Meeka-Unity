@@ -21,10 +21,12 @@ public class QuestHolder : MonoBehaviour
     public Text titleText;
     public Text descriptionText;
     public GameObject newQuest;
+    public GameObject newQuestOnHold;
 
     public GameObject currentQuestGrid;
     public GameObject choiceQuestPanel;
     public GameObject currentQuestPanel;
+    public GameObject holdQuestPanel;
     public bool clicked = false;
     private MenuScript menu;
     private MainBehaviour main;
@@ -34,6 +36,7 @@ public class QuestHolder : MonoBehaviour
         menu = FindObjectOfType<MenuScript>();
         main = FindObjectOfType<MainBehaviour>();
         currentQuestGrid = menu.currentQuestGrid;
+        holdQuestPanel = menu.holdQuestGrid;
     }
 
     public void UpdateValues(int id, string title,string desc, string finish, int thriftiness, int fitness, int happiness, int health, int reputation, int wisdom, int pawprint)
@@ -72,12 +75,39 @@ public class QuestHolder : MonoBehaviour
                 Debug.Log( "Created quest: " + GO.GetComponent<QuestHolder>().questTitle);      
                 //clicked = true;
                 menu.state = MenuState.NoMenu;
+                if(transform.name.Contains("Hold")) Destroy( gameObject );
             }
         }
     }
     public void DenyQuest()
     {
         Debug.Log("Denied quest: " + questTitle);
+        menu.state = MenuState.NoMenu;
+    }
+    public void HoldQuest()
+    {
+        Debug.Log( "Quest on hold: " + questTitle);
+        if (holdQuestPanel.transform.childCount < menu.holdSlots)
+        {
+            if (newQuestOnHold != null)
+            {
+                GameObject GO = Instantiate( newQuestOnHold );
+                GO.transform.SetParent( holdQuestPanel.transform );
+                GO.transform.localScale = new Vector3( 1, 1, 1 );
+                GO.GetComponent<QuestHolder>( ).UpdateValues( questID, questTitle, questDesc, questFinish, thriftinessPoints, fitnessPoints, happinessPoints, healthPoints, reputationPoints, wisdomPoints, pawprintPoints );
+                GO.GetComponent<QuestHolder>( ).UpdateInfo( );
+                //clicked = true;
+                menu.state = MenuState.NoMenu;
+            }
+        }
+        else
+        {
+            Debug.Log("No more free hold slots!");
+        }
+    }
+    public void BlockQuest()
+    {
+        Destroy( gameObject );
         menu.state = MenuState.NoMenu;
     }
 
