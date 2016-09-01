@@ -6,6 +6,8 @@ using UnityEngine.UI.Extensions;
 
 public class MainBehaviour : MonoBehaviour
 {
+
+    public GameObject infoScreen;
     public AudioSource pointAudio;
     public AudioClip pointUp;
     public AudioClip pointDown;
@@ -96,6 +98,10 @@ public class MainBehaviour : MonoBehaviour
     public int wisdomScore = 0;
     public int pawprintScore = 0;
 
+    [Space(5)]
+    public int multValue;
+    [Space(5)]
+
     private int wisdomPlusCounter = 0;
     private int wisdomMinusCounter = 0;
     private bool wisdomPlusCoroutineHasStarted = false;
@@ -104,6 +110,8 @@ public class MainBehaviour : MonoBehaviour
     private int healthMinusCounter = 0;
     private bool healthMinusCoroutineHasStarted = false;
 
+    public Image overalHappinessLevel;
+
     public UICircle thriftCircle;
     public UICircle fitnessCircle;
     public UICircle happinessCircle;
@@ -111,9 +119,15 @@ public class MainBehaviour : MonoBehaviour
     public UICircle reputationCircle;
     public UICircle wisdomCircle;
 
+    public int holdSlots = 3;
+    public int holdSlotValue = 15;
+    public int scorePoints = 100;
+    public Text scorePointText;
+
     public void Start()
     {
         updateScoreValues( );
+        updateScorePoints( );
         /*
           Click menu button
           Display 2 options:
@@ -135,8 +149,21 @@ public class MainBehaviour : MonoBehaviour
         */
     }
 
+    public void updateScorePoints()
+    {
+        scorePointText.text = ""+scorePoints;
+    }
+
     public void AddScore(int thrift, int fit, int happ, int health, int rep, int wis, int paw)
     {
+        //thriftinessScore = Mathf.Clamp(thriftinessScore,0,100);
+        //fitnessScore = Mathf.Clamp( fitnessScore, 0,100);
+        //happinessScore = Mathf.Clamp( happinessScore, 0,100);
+        //healthScore = Mathf.Clamp( healthScore, 0,100);
+        //reputationScore = Mathf.Clamp( reputationScore, 0,100);
+        //wisdomScore = Mathf.Clamp( wisdomScore, 0,100);
+        //pawprintScore = Mathf.Clamp( pawprintScore, 0,100);
+
         thriftinessScore += thrift;
         fitnessScore += fit;
         happinessScore += happ;
@@ -147,21 +174,30 @@ public class MainBehaviour : MonoBehaviour
         
         updateScoreValues( );
 
+        overalHappinessLevel.fillAmount = (((thriftinessScore + fitnessScore + happinessScore + healthScore + reputationScore + wisdomScore + pawprintScore) / 7)/100f)*multValue;
 
-        thriftCircle.fillPercent = thriftinessScore * 10;
+        thriftCircle.fillPercent = thriftinessScore * multValue;
+        thriftCircle.fillPercent = Mathf.Clamp( thriftCircle.fillPercent, 0, 100 ); 
         thriftCircle.SetAllDirty( );
-        fitnessCircle.fillPercent = fitnessScore * 10;
+        fitnessCircle.fillPercent = fitnessScore * multValue;
+        fitnessCircle.fillPercent = Mathf.Clamp( fitnessCircle.fillPercent, 0, 100 );
         fitnessCircle.SetAllDirty( );
-        happinessCircle.fillPercent = happinessScore * 10;
+        happinessCircle.fillPercent = happinessScore * multValue;
+        happinessCircle.fillPercent = Mathf.Clamp( happinessCircle.fillPercent, 0, 100 );
         happinessCircle.SetAllDirty( );
-        healthCircle.fillPercent = healthScore * 10;
+        healthCircle.fillPercent = healthScore * multValue;
+        healthCircle.fillPercent = Mathf.Clamp( healthCircle.fillPercent, 0, 100 );
         healthCircle.SetAllDirty( );
-        reputationCircle.fillPercent = reputationScore * 10;
+        reputationCircle.fillPercent = reputationScore * multValue;
+        reputationCircle.fillPercent = Mathf.Clamp( reputationCircle.fillPercent, 0, 100 );
         reputationCircle.SetAllDirty( );
-        wisdomCircle.fillPercent = wisdomScore * 10;
+        wisdomCircle.fillPercent = wisdomScore * multValue;
+        wisdomCircle.fillPercent = Mathf.Clamp( wisdomCircle.fillPercent, 0, 100 );
         wisdomCircle.SetAllDirty( );
         Canvas.ForceUpdateCanvases( );
     }
+
+
 
     public void increaseScore()
     {
@@ -182,32 +218,16 @@ public class MainBehaviour : MonoBehaviour
         Canvas.ForceUpdateCanvases( );
     }
 
-    public void Update()
-    {
-        
-
-        if(Input.GetKeyDown(KeyCode.I))
+    public void FixedUpdate()
+    {   
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            
+            AddScore ( 1, 1, 1, 1, 1, 1, 1 );
         }
-        if(Input.GetKeyDown(KeyCode.U))
-        {
-            thriftinessScore--;
-            fitnessScore--;
-            happinessScore--;
-            healthScore--;
-            reputationScore--;
-            wisdomScore--;
-            pawprintScore--;
-            updateScoreValues();
-            
-        }
-
-
-
+          
         if(!wisdomPlusCoroutineHasStarted && wisdomScore > 2)
         {
-            Debug.Log("Cycling wisdom icons.");
+            //Debug.Log("Cycling wisdom icons.");
             //StartCoroutine( "cycleWisdom" );
             InvokeRepeating("cycleWisdomPlus",2f,2f);
             wisdomPlusCoroutineHasStarted = true;
@@ -219,7 +239,7 @@ public class MainBehaviour : MonoBehaviour
         }
         if(!wisdomMinusCoroutineHasStarted && wisdomScore < 0)
         {
-            Debug.Log("Cycling wisdom icons.");
+            //Debug.Log("Cycling wisdom icons.");
             //StartCoroutine( "cycleWisdom" );
             InvokeRepeating("cycleWisdomMinus",2f,2f);
             wisdomMinusCoroutineHasStarted = true;
@@ -233,7 +253,7 @@ public class MainBehaviour : MonoBehaviour
 
         if(!healthMinusCoroutineHasStarted && healthScore < 0)
         {
-            Debug.Log("Cycling wisdom icons.");
+            //Debug.Log("Cycling wisdom icons.");
             //StartCoroutine( "cycleWisdom" );
             InvokeRepeating("cycleHealthMinus",2f,2f);
             healthMinusCoroutineHasStarted = true;

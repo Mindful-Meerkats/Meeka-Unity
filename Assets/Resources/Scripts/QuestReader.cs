@@ -16,7 +16,19 @@ namespace QUEST
     public class QuestReader : MonoBehaviour
     {
 
+        private MenuScript menu;
+
+        public static List< Quest > availableQuests = new List<Quest>( );
+
+        public static List< Quest > acceptedQuests  = new List<Quest>( );
+        
+        public static List< Quest > blockedQuests   = new List<Quest>( );
+
+        public static List< Quest > holdQuests      = new List<Quest>( );
+
+
         public string jsonFile;
+        public string jsonFilePath;
         public JsonData questData;
 
         public GameObject loadingImage;
@@ -25,15 +37,10 @@ namespace QUEST
         public GameObject grid;
         public QuestHolder[] holder;
         public QuestDirectory directory;
-        public QuestDirectoryJSON directoryJSON;
-        public int current = 0;
-        private TextReader reader;
-        
+
+        public int current = 0;        
 
         public Color test;
-
-        string path;
-
         public Image DEBUG;
         public Text DEBUGTEXT;
 
@@ -41,10 +48,6 @@ namespace QUEST
         {
             [XmlElement( "Quest" )]
             public List<Quest> questList = new List<Quest>( );
-        }
-        public class QuestDirectoryJSON
-        {
-            public List<Quest> questList = new List<Quest>();
         }
 
         public class Quest
@@ -67,8 +70,10 @@ namespace QUEST
 
         public void Start ( )
         {
+            menu = FindObjectOfType<MenuScript>( );
             holder = grid.GetComponentsInChildren<QuestHolder>( );
             Deserialize( );
+
             if(!loadingImage.activeSelf)loadingImage.SetActive(true);
 
         }
@@ -130,16 +135,13 @@ namespace QUEST
         //Deserialize JSON from a public dropbox folder.
         IEnumerator DeserializeJSON ( )
         {
-            string filePath = "https://dl.dropboxusercontent.com/u/107094743/QuestJSON.json";
             ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
-            WWW www = new WWW( filePath );
+            WWW www = new WWW( jsonFilePath );
 
             yield return www;
             loadingImage.SetActive( false );
             jsonFile = www.text;
 
-            //Store a local QuestDirectoryJSON
-            QuestDirectoryJSON newDirectoryJSON = JsonMapper.ToObject<QuestDirectoryJSON>( jsonFile );
             JsonData data = JsonMapper.ToObject( jsonFile );
             
             
@@ -148,23 +150,27 @@ namespace QUEST
             {
                 //Debug.Log( "Data from JSON file: " + data[0][ii] );
                 Quest newQuest = new Quest();
-                newQuest.questID = Int32.Parse( (string)data[0][ii]["questID"]);
-                newQuest.questTitle = (string)data[0][ii]["questTitle"];
-                newQuest.questDesc = (string)data[0][ii]["questDesc"];
-                newQuest.questFinish = (string)data[0][ii]["questFinish"];
-                newQuest.thriftinessPoints = Int32.Parse( (string)data[0][ii]["thriftinessPoints"]);
-                newQuest.fitnessPoints = Int32.Parse( (string)data[0][ii]["fitnessPoints"]);
-                newQuest.happinessPoints = Int32.Parse( (string)data[0][ii]["happinessPoints"]);
-                newQuest.healthPoints = Int32.Parse( (string)data[0][ii]["healthPoints"]);
-                newQuest.reputationPoints = Int32.Parse( (string)data[0][ii]["reputationPoints"]);
-                newQuest.wisdomPoints = Int32.Parse( (string)data[0][ii]["wisdomPoints"]);
-                newQuest.pawprintPoints = Int32.Parse( (string)data[0][ii]["pawprintPoints"]);
+                newQuest.questID =              int.Parse( (string)data[0][ii]["questID"]);
+                newQuest.questTitle =           (string)data[0][ii]["questTitle"];
+                newQuest.questDesc =            (string)data[0][ii]["questDesc"];
+                newQuest.questFinish =          (string)data[0][ii]["questFinish"];
+                newQuest.thriftinessPoints =    int.Parse( (string)data[0][ii]["thriftinessPoints"]);
+                newQuest.fitnessPoints =        int.Parse( (string)data[0][ii]["fitnessPoints"]);
+                newQuest.happinessPoints =      int.Parse( (string)data[0][ii]["happinessPoints"]);
+                newQuest.healthPoints =         int.Parse( (string)data[0][ii]["healthPoints"]);
+                newQuest.reputationPoints =     int.Parse( (string)data[0][ii]["reputationPoints"]);
+                newQuest.wisdomPoints =         int.Parse( (string)data[0][ii]["wisdomPoints"]);
+                newQuest.pawprintPoints =       int.Parse( (string)data[0][ii]["pawprintPoints"]);
 
-                newDirectoryJSON.questList.Add(newQuest);
+                availableQuests.Add( newQuest );
 
             }
-            directoryJSON = newDirectoryJSON;
-            PickRandomQuest( );
+
+            //foreach (Quest quest in availableQuests)
+            //{
+            //    Debug.Log( quest.questID );
+            //}
+            //PickRandomQuest( );
         }
 
 
@@ -195,6 +201,8 @@ namespace QUEST
             return isOk;
         }
 
+        private string debug = "";
+
         public void PickRandomQuest ()
         {
             //Debug.Log("Picking random quest. "+"Json quest directory available?: " + directoryJSON);
@@ -202,15 +210,29 @@ namespace QUEST
             foreach (QuestHolder qh in holder)
             {
                 int random = 0;
-                //if (directory != null)
-                //    random = Mathf.RoundToInt( UnityEngine.Random.Range( 0, directory.questList.Count ) );
-                if (directoryJSON != null)
+                if ( availableQuests.Count >= 1 )
                 {
-                    random = Mathf.RoundToInt( UnityEngine.Random.Range( 0, directoryJSON.questList.Count ) );
-                    Debug.Log("Current random quest: "+ directoryJSON.questList[random].questTitle);
-                }
-                current = random;
-                UpdateTextValue( qh, current );
+                    random = Mathf.RoundToInt( UnityEngine.Random.Range( 1, availableQuests.Count ) );
+                    Debug.Log("RANDOM: "+random + ", Quest count: "+availableQuests.Count);
+
+                    //Debug.Log("QuestID:"+availableQuests[random].questID);
+                    if (availableQuests.Count > 1)
+                    {
+                        UpdateTextValue( qh, random, availableQuests[random] );
+                        current = random;
+                        debug+=availableQuests.Count;
+                        Debug.Log(debug);
+                    }
+                    else
+                    {
+                        UpdateTextValue( qh, 1, availableQuests[1] );
+                    }
+                    Debug.Log( "Current random quest: " + availableQuests[current].questTitle );
+                } 
+                else
+                {
+                    menu.Popup("All out!","No more quests available!");
+                }   
             }
         }
         public void PickNextQuestInDirectory ( )
@@ -228,26 +250,23 @@ namespace QUEST
                     {
                         current = 0;
                     }
-                    UpdateTextValue( qh, current );
+                    UpdateTextValue( qh, current, availableQuests[current] );
                 }
-                if (directoryJSON != null)
+                if (current < availableQuests.Count - 1)
                 {
-                    if (current < directoryJSON.questList.Count - 1)
-                    {
-                        current++;
-                    }
-                    else
-                    {
-                        current = 0;
-                    }
-                    UpdateTextValue( qh, current );
+                    current++;
                 }
+                else
+                {
+                    current = 0;
+                }
+                UpdateTextValue( qh, current, availableQuests[current] );
 
             }
 
         }
 
-        private void UpdateTextValue ( QuestHolder holderNr, int nr )
+        private void UpdateTextValue ( QuestHolder holderNr, int nr, Quest selectedQuest )
         {
             if (directory != null)
             {
@@ -262,21 +281,23 @@ namespace QUEST
                                       directory.questList[nr].reputationPoints,
                                       directory.questList[nr].wisdomPoints,
                                       directory.questList[nr].pawprintPoints );
+                holderNr.thisQuest = selectedQuest;
                 holderNr.UpdateInfo( );
             }
-            if (directoryJSON != null)
+            if (availableQuests.Count != 0 && holderNr != null)
             {
-                holderNr.UpdateValues( directoryJSON.questList[nr].questID,
-                                      directoryJSON.questList[nr].questTitle,
-                                      directoryJSON.questList[nr].questDesc,
-                                      directoryJSON.questList[nr].questFinish,
-                                      directoryJSON.questList[nr].thriftinessPoints,
-                                      directoryJSON.questList[nr].fitnessPoints,
-                                      directoryJSON.questList[nr].happinessPoints,
-                                      directoryJSON.questList[nr].healthPoints,
-                                      directoryJSON.questList[nr].reputationPoints,
-                                      directoryJSON.questList[nr].wisdomPoints,
-                                      directoryJSON.questList[nr].pawprintPoints );
+                holderNr.UpdateValues( availableQuests[nr].questID,
+                                      availableQuests[nr].questTitle,
+                                      availableQuests[nr].questDesc,
+                                      availableQuests[nr].questFinish,
+                                      availableQuests[nr].thriftinessPoints,
+                                      availableQuests[nr].fitnessPoints,
+                                      availableQuests[nr].happinessPoints,
+                                      availableQuests[nr].healthPoints,
+                                      availableQuests[nr].reputationPoints,
+                                      availableQuests[nr].wisdomPoints,
+                                      availableQuests[nr].pawprintPoints );
+                holderNr.thisQuest = selectedQuest;
                 holderNr.UpdateInfo( );
             }
         }

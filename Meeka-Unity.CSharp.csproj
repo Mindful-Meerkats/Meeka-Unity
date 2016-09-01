@@ -76,6 +76,7 @@
     <Compile Include="Assets\Resources\Scripts\MiniJSON.cs" />
     <Compile Include="Assets\Resources\Scripts\QuestHolder.cs" />
     <Compile Include="Assets\Resources\Scripts\QuestReader.cs" />
+    <Compile Include="Assets\Resources\Scripts\Tutorial.cs" />
     <Compile Include="Assets\unity-ui-extensions\Scripts\Accordion\Accordion.cs" />
     <Compile Include="Assets\unity-ui-extensions\Scripts\Accordion\AccordionElement.cs" />
     <Compile Include="Assets\unity-ui-extensions\Scripts\Accordion\Tweening\FloatTween.cs" />
